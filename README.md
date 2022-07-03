@@ -23,13 +23,13 @@
 | Column             | Type        | Options                        |
 | ------------------ | ----------- | -------------------------------|
 | title              | string      | null: false                    |
-| description        | test        | null: false                    |
+| description        | text        | null: false                    |
 | category_id        | integer     | null: false                    |
 | condition_id       | integer     | null: false                    |
 | charge_id          | integer     | null: false                    |
 | area_id            | integer     | null: false                    |
 | delivery_day_id    | integer     | null: false                    |
-| price              | string      | null: false                    |
+| price              | integer     | null: false                    |
 | user               | references  | null: false, foreign_key: true |
 
 ### Association
@@ -50,6 +50,7 @@
 ### Association
 
 - belongs_to :product
+- belongs_to :user
 - has_one :delivery
 
 ## deliveries テーブル
