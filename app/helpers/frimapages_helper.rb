@@ -1,0 +1,2 @@
+module FrimapagesHelper
+end
