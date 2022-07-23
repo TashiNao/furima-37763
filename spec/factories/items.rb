@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :item do
-    product_name { 'test' }
+    title { 'test' }
     description     { 'test' }
     category_id     { 2 }
     condition_id    { 2 }

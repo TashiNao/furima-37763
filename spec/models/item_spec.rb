@@ -17,8 +17,8 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Image can't be blank")
       end
-      it 'product_nameが空だと出品できない' do
-        @item.product_name = ''
+      it 'titelが空だと出品できない' do
+        @item.title = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Product name can't be blank")
       end
@@ -62,7 +62,7 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Price must be greater than or equal to 300')
       end
-      it 'priceが300未満だと出品できない' do
+      it 'priceが9,999,999円を超えると出品できない' do
         @item.price = 10_000_000
         @item.valid?
         expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
