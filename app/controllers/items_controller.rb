@@ -19,14 +19,13 @@ class ItemsController < ApplicationController
   end
 
   private
+
   def item_params
-    params.require(:item).permit(:product_name, :description, :image, :price, :category_id, :condition_id, :charge_id, :area_id, :delivery_day_id).merge(user_id: current_user.id)
+    params.require(:item).permit(:product_name, :description, :image, :price, :category_id, :condition_id, :charge_id, :area_id,
+                                 :delivery_day_id).merge(user_id: current_user.id)
   end
 
   def move_to_signed_in
-    unless user_signed_in?
-      redirect_to '/users/sign_in'
-    end
+    redirect_to '/users/sign_in' unless user_signed_in?
   end
 end
-
