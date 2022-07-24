@@ -16,9 +16,9 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
   validates :image, presence: true
-  belongs_to_active_hash :genre_category
-  belongs_to_active_hash :genre_condition
-  belongs_to_active_hash :genre_charge
-  belongs_to_active_hash :genre_area
-  belongs_to_active_hash :genre_deliveryday
+  belongs_to_active_hash :category
+  belongs_to_active_hash :condition
+  belongs_to_active_hash :charge
+  belongs_to_active_hash :area
+  belongs_to_active_hash :deliveryday
 end
