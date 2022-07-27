@@ -47,8 +47,8 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Area can't be blank")
       end
-      it 'delivery_day_idが1以外出ないと出品できない' do
-        @item.delivery_day_id = 1
+      it 'deliveryday_idが1以外出ないと出品できない' do
+        @item.deliveryday_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Delivery day can't be blank")
       end
