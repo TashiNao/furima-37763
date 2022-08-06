@@ -14,6 +14,7 @@ class Item < ApplicationRecord
   end
 
   belongs_to :user
+  has_one :purchase
   has_one_attached :image
   validates :image, presence: true
   belongs_to_active_hash :category

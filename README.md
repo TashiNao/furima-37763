@@ -51,16 +51,16 @@
 
 - belongs_to :product
 - belongs_to :user
-- has_one :delivery
+- has_one :address
 
-## deliveries テーブル
+## address テーブル
 
 | Column             | Type        | Options                        |
 | ------------------ | ----------- | ------------------------------ |
 | postal             | string      | null: false                    |
-| area_id            | integer     | null: false                    |
+| prefecture_id      | integer     | null: false                    |
 | city               | string      | null: false                    |
-| address            | string      | null: false                    |
+| street             | string      | null: false                    |
 | building           | string      |                                |
 | telephone          | string      | null: false                    |
 | purchase           | references  | null: false, foreign_key: true |
