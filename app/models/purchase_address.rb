@@ -11,7 +11,7 @@ class PurchaseAddress
     validates :telephone, format: { with: /\A\d{10}\z|\A\d{11}\z/, message: 'is invalid' }
     validates :token, presence: { message: "can't be blank" }
   end
-  validates :prefecture_id, numericality: { other_than: 0, message: "can't be blank" }
+    validates :prefecture_id, presence: true, numericality: { other_than: 1, message: "can't be blank" }
 
   def save
     purchase = Purchase.create(user_id: user_id, item_id: item_id)
