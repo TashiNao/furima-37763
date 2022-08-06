@@ -14,10 +14,6 @@ class PurchasesController < ApplicationController
     end
   end
 
-  def new
-    @purchase_address = PurchaseAddress.new
-  end
-
   def create
     @purchase_address = PurchaseAddress.new(purchase_params)
     if @purchase_address.valid?
