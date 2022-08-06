@@ -65,12 +65,12 @@ RSpec.describe PurchaseAddress, type: :model do
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include("Telephone can't be blank")
       end
-      it '電話番号は、10桁以上11桁以内でないと保存できないこと' do
+      it '電話番号は、9桁以下では保存できないこと' do
         @purchase_address.telephone = '123456789'
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include('Telephone is invalid')
       end
-      it '電話番号は、10桁以上11桁以内でないと保存できないこと' do
+      it '電話番号は、12桁以上ではないと保存できないこと' do
         @purchase_address.telephone = '123456789012'
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include('Telephone is invalid')
